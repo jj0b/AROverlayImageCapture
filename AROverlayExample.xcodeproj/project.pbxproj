@@ -1,0 +1,344 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		96B05C101358AD1A00CF35AE /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B05C0F1358AD1A00CF35AE /* CoreVideo.framework */; };
+		96B05C131358AD2200CF35AE /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B05C121358AD2200CF35AE /* CoreMedia.framework */; };
+		96B05C151358AD3400CF35AE /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B05C141358AD3400CF35AE /* ImageIO.framework */; };
+		96B05C171358AF7000CF35AE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B05C161358AF7000CF35AE /* QuartzCore.framework */; };
+		96C334F91353F36900AD25CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C334F81353F36900AD25CA /* UIKit.framework */; };
+		96C334FB1353F36900AD25CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C334FA1353F36900AD25CA /* Foundation.framework */; };
+		96C334FD1353F36900AD25CA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C334FC1353F36900AD25CA /* CoreGraphics.framework */; };
+		96C335031353F36900AD25CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96C335011353F36900AD25CA /* InfoPlist.strings */; };
+		96C335061353F36900AD25CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C335051353F36900AD25CA /* main.m */; };
+		96C3350C1353F36900AD25CA /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C3350A1353F36900AD25CA /* MainWindow.xib */; };
+		96C3351A1353F60100AD25CA /* AROverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C335181353F60100AD25CA /* AROverlayViewController.xib */; };
+		96C335321353FC2600AD25CA /* overlaygraphic.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C335301353FC2600AD25CA /* overlaygraphic.png */; };
+		96C335331353FC2600AD25CA /* scanbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C335311353FC2600AD25CA /* scanbutton.png */; };
+		96C3353B1353FC5000AD25CA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C335361353FC5000AD25CA /* AppDelegate.m */; };
+		96C3353C1353FC5000AD25CA /* AROverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C335381353FC5000AD25CA /* AROverlayViewController.m */; };
+		96C3353D1353FC5000AD25CA /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C3353A1353FC5000AD25CA /* CaptureSessionManager.m */; };
+		96C335411353FE1500AD25CA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C335401353FE1500AD25CA /* AVFoundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		96B05C0F1358AD1A00CF35AE /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		96B05C121358AD2200CF35AE /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		96B05C141358AD3400CF35AE /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		96B05C161358AF7000CF35AE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		96C334F41353F36900AD25CA /* AROverlayExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AROverlayExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		96C334F81353F36900AD25CA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		96C334FA1353F36900AD25CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		96C334FC1353F36900AD25CA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		96C335001353F36900AD25CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96C335021353F36900AD25CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		96C335051353F36900AD25CA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		96C3350B1353F36900AD25CA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		96C335191353F60100AD25CA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/AROverlayViewController.xib; sourceTree = "<group>"; };
+		96C3352F1353FBFD00AD25CA /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		96C335301353FC2600AD25CA /* overlaygraphic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlaygraphic.png; sourceTree = "<group>"; };
+		96C335311353FC2600AD25CA /* scanbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scanbutton.png; sourceTree = "<group>"; };
+		96C335351353FC5000AD25CA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
+		96C335361353FC5000AD25CA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
+		96C335371353FC5000AD25CA /* AROverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AROverlayViewController.h; sourceTree = "<group>"; };
+		96C335381353FC5000AD25CA /* AROverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AROverlayViewController.m; sourceTree = "<group>"; };
+		96C335391353FC5000AD25CA /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
+		96C3353A1353FC5000AD25CA /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionManager.m; sourceTree = "<group>"; };
+		96C335401353FE1500AD25CA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		96C334F11353F36900AD25CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96B05C171358AF7000CF35AE /* QuartzCore.framework in Frameworks */,
+				96B05C151358AD3400CF35AE /* ImageIO.framework in Frameworks */,
+				96B05C131358AD2200CF35AE /* CoreMedia.framework in Frameworks */,
+				96B05C101358AD1A00CF35AE /* CoreVideo.framework in Frameworks */,
+				96C335411353FE1500AD25CA /* AVFoundation.framework in Frameworks */,
+				96C334F91353F36900AD25CA /* UIKit.framework in Frameworks */,
+				96C334FB1353F36900AD25CA /* Foundation.framework in Frameworks */,
+				96C334FD1353F36900AD25CA /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		96C334E91353F36900AD25CA = {
+			isa = PBXGroup;
+			children = (
+				96C334FE1353F36900AD25CA /* AROverlayExample */,
+				96C334F71353F36900AD25CA /* Frameworks */,
+				96C334F51353F36900AD25CA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		96C334F51353F36900AD25CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				96C334F41353F36900AD25CA /* AROverlayExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		96C334F71353F36900AD25CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96B05C161358AF7000CF35AE /* QuartzCore.framework */,
+				96B05C141358AD3400CF35AE /* ImageIO.framework */,
+				96B05C121358AD2200CF35AE /* CoreMedia.framework */,
+				96B05C0F1358AD1A00CF35AE /* CoreVideo.framework */,
+				96C335401353FE1500AD25CA /* AVFoundation.framework */,
+				96C334F81353F36900AD25CA /* UIKit.framework */,
+				96C334FA1353F36900AD25CA /* Foundation.framework */,
+				96C334FC1353F36900AD25CA /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96C334FE1353F36900AD25CA /* AROverlayExample */ = {
+			isa = PBXGroup;
+			children = (
+				96C335351353FC5000AD25CA /* AppDelegate.h */,
+				96C335361353FC5000AD25CA /* AppDelegate.m */,
+				96C335341353FC5000AD25CA /* Classes */,
+				96C3353F1353FCF500AD25CA /* XIBs */,
+				96C334FF1353F36900AD25CA /* Supporting Files */,
+			);
+			path = AROverlayExample;
+			sourceTree = "<group>";
+		};
+		96C334FF1353F36900AD25CA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				96C3353E1353FCE400AD25CA /* Images */,
+				96C3352F1353FBFD00AD25CA /* Prefix.pch */,
+				96C335001353F36900AD25CA /* Info.plist */,
+				96C335011353F36900AD25CA /* InfoPlist.strings */,
+				96C335051353F36900AD25CA /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		96C335341353FC5000AD25CA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				96C335371353FC5000AD25CA /* AROverlayViewController.h */,
+				96C335381353FC5000AD25CA /* AROverlayViewController.m */,
+				96C335391353FC5000AD25CA /* CaptureSessionManager.h */,
+				96C3353A1353FC5000AD25CA /* CaptureSessionManager.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		96C3353E1353FCE400AD25CA /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				96C335301353FC2600AD25CA /* overlaygraphic.png */,
+				96C335311353FC2600AD25CA /* scanbutton.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		96C3353F1353FCF500AD25CA /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				96C3350A1353F36900AD25CA /* MainWindow.xib */,
+				96C335181353F60100AD25CA /* AROverlayViewController.xib */,
+			);
+			name = XIBs;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		96C334F31353F36900AD25CA /* AROverlayExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96C335151353F36900AD25CA /* Build configuration list for PBXNativeTarget "AROverlayExample" */;
+			buildPhases = (
+				96C334F01353F36900AD25CA /* Sources */,
+				96C334F11353F36900AD25CA /* Frameworks */,
+				96C334F21353F36900AD25CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AROverlayExample;
+			productName = AROverlayExample;
+			productReference = 96C334F41353F36900AD25CA /* AROverlayExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		96C334EB1353F36900AD25CA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 96C334EE1353F36900AD25CA /* Build configuration list for PBXProject "AROverlayExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 96C334E91353F36900AD25CA;
+			productRefGroup = 96C334F51353F36900AD25CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				96C334F31353F36900AD25CA /* AROverlayExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		96C334F21353F36900AD25CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96C335031353F36900AD25CA /* InfoPlist.strings in Resources */,
+				96C3350C1353F36900AD25CA /* MainWindow.xib in Resources */,
+				96C3351A1353F60100AD25CA /* AROverlayViewController.xib in Resources */,
+				96C335321353FC2600AD25CA /* overlaygraphic.png in Resources */,
+				96C335331353FC2600AD25CA /* scanbutton.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		96C334F01353F36900AD25CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96C335061353F36900AD25CA /* main.m in Sources */,
+				96C3353B1353FC5000AD25CA /* AppDelegate.m in Sources */,
+				96C3353C1353FC5000AD25CA /* AROverlayViewController.m in Sources */,
+				96C3353D1353FC5000AD25CA /* CaptureSessionManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		96C335011353F36900AD25CA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96C335021353F36900AD25CA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		96C3350A1353F36900AD25CA /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96C3350B1353F36900AD25CA /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		96C335181353F60100AD25CA /* AROverlayViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96C335191353F60100AD25CA /* en */,
+			);
+			name = AROverlayViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		96C335131353F36900AD25CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		96C335141353F36900AD25CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		96C335161353F36900AD25CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = AROverlayExample/Prefix.pch;
+				INFOPLIST_FILE = AROverlayExample/Info.plist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		96C335171353F36900AD25CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = AROverlayExample/Prefix.pch;
+				INFOPLIST_FILE = AROverlayExample/Info.plist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		96C334EE1353F36900AD25CA /* Build configuration list for PBXProject "AROverlayExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96C335131353F36900AD25CA /* Debug */,
+				96C335141353F36900AD25CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96C335151353F36900AD25CA /* Build configuration list for PBXNativeTarget "AROverlayExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96C335161353F36900AD25CA /* Debug */,
+				96C335171353F36900AD25CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 96C334EB1353F36900AD25CA /* Project object */;
+}
