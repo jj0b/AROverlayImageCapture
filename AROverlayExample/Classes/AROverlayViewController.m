@@ -11,7 +11,7 @@
 
 - (void)viewDidLoad {
   
-	[self setCaptureManager:[[CaptureSessionManager alloc] init]];
+	[self setCaptureManager:[[[CaptureSessionManager alloc] init] autorelease]];
   
 	[[self captureManager] addVideoInput];
   
