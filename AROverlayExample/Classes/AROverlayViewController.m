@@ -13,15 +13,14 @@
   
 	[self setCaptureManager:[[[CaptureSessionManager alloc] init] autorelease]];
   
-	[[self captureManager] addVideoInput];
+	[[self captureManager] addVideoInputFrontCamera:YES]; // set to YES for Front Camera, No for Back camera
   
   [[self captureManager] addStillImageOutput];
   
 	[[self captureManager] addVideoPreviewLayer];
 	CGRect layerRect = [[[self view] layer] bounds];
-	[[[self captureManager] previewLayer] setBounds:layerRect];
-	[[[self captureManager] previewLayer] setPosition:CGPointMake(CGRectGetMidX(layerRect),
-                                                                CGRectGetMidY(layerRect))];
+    [[[self captureManager] previewLayer] setBounds:layerRect];
+    [[[self captureManager] previewLayer] setPosition:CGPointMake(CGRectGetMidX(layerRect),CGRectGetMidY(layerRect))];
 	[[[self view] layer] addSublayer:[[self captureManager] previewLayer]];
   
   UIImageView *overlayImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"overlaygraphic.png"]];
