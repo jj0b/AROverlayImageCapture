@@ -23,21 +23,35 @@
   
 }
 
+/*Switches between the back and front facing camera*/
 - (void)switchCameraInputToFront:(BOOL)front{
+    for(AVCaptureInput* input in [[self captureSession]inputs]){
+        [[self captureSession] removeInput:input];
+    }
     AVCaptureDevice *frontCamera;
     AVCaptureDevice *backCamera;
-    NSError* error;
-    AVCaptureDeviceInput *frontFacing = [AVCaptureDeviceInput deviceInputWithDevice:frontCamera error:&error];
-    AVCaptureDeviceInput *backFacing = [AVCaptureDeviceInput deviceInputWithDevice:backCamera error:&error];
-    if(front && !error){
-        [[self captureSession] removeInput:backFacing];
-        [[self captureSession] removeInput:frontFacing];
+    NSError* frontError;
+    NSError* backError;
+    NSArray *devices = [AVCaptureDevice devices];
+    for (AVCaptureDevice *device in devices) {
+        if ([device hasMediaType:AVMediaTypeVideo]) {
+            if ([device position] == AVCaptureDevicePositionBack) {
+                backCamera = device;
+            }
+            else {
+                frontCamera = device;
+            }
+        }
+    }
+    AVCaptureDeviceInput *frontFacing = [AVCaptureDeviceInput deviceInputWithDevice:frontCamera error:&frontError];
+    AVCaptureDeviceInput *backFacing = [AVCaptureDeviceInput deviceInputWithDevice:backCamera error:&backError];
+    if(front && !frontError){
         if([[self captureSession] canAddInput:frontFacing])[[self captureSession] addInput:frontFacing];
-    }else if(!front && !error){
-        [[self captureSession] removeInput:backFacing];
-        [[self captureSession] removeInput:frontFacing];
+    }else if(!front && !backError){
         if([[self captureSession] canAddInput:backFacing])[[self captureSession] addInput:backFacing];
     }
+    if(frontError)NSLog(@"Front error: %@", frontError);
+    if(backError)NSLog(@"Back error: %@", backError);
 }
 
 - (void)addVideoInputFrontCamera:(BOOL)front {
