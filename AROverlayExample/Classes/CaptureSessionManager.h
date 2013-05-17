@@ -6,10 +6,10 @@
 
 }
 
-@property (retain) AVCaptureVideoPreviewLayer *previewLayer;
-@property (retain) AVCaptureSession *captureSession;
-@property (retain) AVCaptureStillImageOutput *stillImageOutput;
-@property (nonatomic, retain) UIImage *stillImage;
+@property (strong) AVCaptureVideoPreviewLayer *previewLayer;
+@property (strong) AVCaptureSession *captureSession;
+@property (strong) AVCaptureStillImageOutput *stillImageOutput;
+@property (nonatomic, strong) UIImage *stillImage;
 
 - (void)addVideoPreviewLayer;
 - (void)addStillImageOutput;

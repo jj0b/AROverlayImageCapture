@@ -11,7 +11,7 @@
 
 - (void)viewDidLoad {
   
-	[self setCaptureManager:[[[CaptureSessionManager alloc] init] autorelease]];
+	[self setCaptureManager:[[CaptureSessionManager alloc] init]];
   
 	[[self captureManager] addVideoInputFrontCamera:YES]; // set to YES for Front Camera, No for Back camera
   
@@ -26,7 +26,6 @@
   UIImageView *overlayImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"overlaygraphic.png"]];
   [overlayImageView setFrame:CGRectMake(30, 100, 260, 200)];
   [[self view] addSubview:overlayImageView];
-  [overlayImageView release];
   
   UIButton *overlayButton = [UIButton buttonWithType:UIButtonTypeCustom];
   [overlayButton setImage:[UIImage imageNamed:@"scanbutton.png"] forState:UIControlStateNormal];
@@ -36,7 +35,6 @@
   
   UILabel *tempLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 50, 120, 30)];
   [self setScanningLabel:tempLabel];
-  [tempLabel release];
 	[scanningLabel setBackgroundColor:[UIColor clearColor]];
 	[scanningLabel setFont:[UIFont fontWithName:@"Courier" size: 18.0]];
 	[scanningLabel setTextColor:[UIColor redColor]]; 
@@ -64,7 +62,6 @@
   if (error != NULL) {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Image couldn't be saved" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
     [alert show];
-    [alert release];
   }
   else {
     [[self scanningLabel] setHidden:YES];
@@ -76,9 +73,8 @@
 }
 
 - (void)dealloc {
-  [captureManager release], captureManager = nil;
-  [scanningLabel release], scanningLabel = nil;
-  [super dealloc];
+  captureManager = nil;
+  scanningLabel = nil;
 }
 
 @end

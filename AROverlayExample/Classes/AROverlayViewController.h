@@ -5,7 +5,7 @@
     
 }
 
-@property (retain) CaptureSessionManager *captureManager;
-@property (nonatomic, retain) UILabel *scanningLabel;
+@property (strong) CaptureSessionManager *captureManager;
+@property (nonatomic, strong) UILabel *scanningLabel;
 
 @end

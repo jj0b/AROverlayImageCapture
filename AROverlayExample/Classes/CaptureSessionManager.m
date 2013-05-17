@@ -18,7 +18,7 @@
 }
 
 - (void)addVideoPreviewLayer {
-	[self setPreviewLayer:[[[AVCaptureVideoPreviewLayer alloc] initWithSession:[self captureSession]] autorelease]];
+	[self setPreviewLayer:[[AVCaptureVideoPreviewLayer alloc] initWithSession:[self captureSession]]];
 	[[self previewLayer] setVideoGravity:AVLayerVideoGravityResizeAspectFill];
   
 }
@@ -70,7 +70,7 @@
 
 - (void)addStillImageOutput 
 {
-  [self setStillImageOutput:[[[AVCaptureStillImageOutput alloc] init] autorelease]];
+  [self setStillImageOutput:[[AVCaptureStillImageOutput alloc] init]];
   NSDictionary *outputSettings = [[NSDictionary alloc] initWithObjectsAndKeys:AVVideoCodecJPEG,AVVideoCodecKey,nil];
   [[self stillImageOutput] setOutputSettings:outputSettings];
   
@@ -117,7 +117,6 @@
                                                          NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageSampleBuffer];    
                                                          UIImage *image = [[UIImage alloc] initWithData:imageData];
                                                          [self setStillImage:image];
-                                                         [image release];
                                                          [[NSNotificationCenter defaultCenter] postNotificationName:kImageCapturedSuccessfully object:nil];
                                                        }];
 }
@@ -126,12 +125,11 @@
 
 	[[self captureSession] stopRunning];
 
-	[previewLayer release], previewLayer = nil;
-	[captureSession release], captureSession = nil;
-  [stillImageOutput release], stillImageOutput = nil;
-  [stillImage release], stillImage = nil;
+	previewLayer = nil;
+	captureSession = nil;
+  stillImageOutput = nil;
+  stillImage = nil;
 
-	[super dealloc];
 }
 
 @end
