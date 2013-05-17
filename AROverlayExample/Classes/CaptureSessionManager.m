@@ -18,9 +18,83 @@
 }
 
 - (void)addVideoPreviewLayer {
-	[self setPreviewLayer:[[[AVCaptureVideoPreviewLayer alloc] initWithSession:[self captureSession]] autorelease]];
+	[self setPreviewLayer:[[AVCaptureVideoPreviewLayer alloc] initWithSession:[self captureSession]]];
 	[[self previewLayer] setVideoGravity:AVLayerVideoGravityResizeAspectFill];
   
+}
+
+- (void)switchCameraInputToFront{
+    for(AVCaptureInput* input in [[self captureSession]inputs]){
+        [[self captureSession] removeInput:input];
+    }
+    AVCaptureDevice* frontCamera;
+    AVCaptureDeviceInput* frontFacing;
+    NSError* err;
+    NSArray* devices = [AVCaptureDevice devices];
+    for (AVCaptureDevice *device in devices) {
+        if ([device hasMediaType:AVMediaTypeVideo]) {
+            if([device position] == AVCaptureDevicePositionFront) {
+                frontCamera = device;
+            }
+        }
+    }
+    frontFacing = [AVCaptureDeviceInput deviceInputWithDevice:frontCamera error:&err];
+    if(!err && [[self captureSession] canAddInput:frontFacing])[[self captureSession] addInput:frontFacing];
+}
+
+- (void) switchCameraInputToBack{
+    for(AVCaptureInput* input in [[self captureSession]inputs]){
+        [[self captureSession] removeInput:input];
+    }
+    AVCaptureDevice* backCamera;
+    AVCaptureDeviceInput* backFacing;
+    NSError* err;
+    NSArray* devices = [AVCaptureDevice devices];
+    for (AVCaptureDevice *device in devices) {
+        if ([device hasMediaType:AVMediaTypeVideo]) {
+            if([device position] == AVCaptureDevicePositionBack) {
+                backCamera = device;
+            }
+        }
+    }
+    backFacing = [AVCaptureDeviceInput deviceInputWithDevice:backCamera error:&err];
+    if(!err && [[self captureSession] canAddInput:backFacing])[[self captureSession] addInput:backFacing];
+}
+
+/*Switches between the back and front facing camera*/
+- (void)switchCameraInputToFront:(BOOL)front{
+    for(AVCaptureInput* input in [[self captureSession]inputs]){
+        [[self captureSession] removeInput:input];
+    }
+    AVCaptureDevice *frontCamera;
+    AVCaptureDevice *backCamera;
+    AVCaptureDeviceInput *frontFacing;
+    AVCaptureDeviceInput *backFacing;
+    NSError* frontError;
+    NSError* backError;
+    NSArray *devices = [AVCaptureDevice devices];
+    for (AVCaptureDevice *device in devices) {
+        if ([device hasMediaType:AVMediaTypeVideo]) {
+            if ([device position] == AVCaptureDevicePositionBack && !front) {
+                backCamera = device;
+            }
+            else if([device position] == AVCaptureDevicePositionFront && front) {
+                frontCamera = device;
+            }
+        }
+    }
+    if(front){
+        frontFacing = [AVCaptureDeviceInput deviceInputWithDevice:frontCamera error:&frontError];
+    }else{
+        backFacing = [AVCaptureDeviceInput deviceInputWithDevice:backCamera error:&backError];
+    }
+    if(front && !frontError){
+        if([[self captureSession] canAddInput:frontFacing])[[self captureSession] addInput:frontFacing];
+    }else if(!front && !backError){
+        if([[self captureSession] canAddInput:backFacing])[[self captureSession] addInput:backFacing];
+    }
+    if(frontError)NSLog(@"Front error: %@", frontError);
+    if(backError)NSLog(@"Back error: %@", backError);
 }
 
 - (void)addVideoInputFrontCamera:(BOOL)front {
@@ -70,7 +144,7 @@
 
 - (void)addStillImageOutput 
 {
-  [self setStillImageOutput:[[[AVCaptureStillImageOutput alloc] init] autorelease]];
+  [self setStillImageOutput:[[AVCaptureStillImageOutput alloc] init]];
   NSDictionary *outputSettings = [[NSDictionary alloc] initWithObjectsAndKeys:AVVideoCodecJPEG,AVVideoCodecKey,nil];
   [[self stillImageOutput] setOutputSettings:outputSettings];
   
@@ -117,21 +191,16 @@
                                                          NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageSampleBuffer];    
                                                          UIImage *image = [[UIImage alloc] initWithData:imageData];
                                                          [self setStillImage:image];
-                                                         [image release];
                                                          [[NSNotificationCenter defaultCenter] postNotificationName:kImageCapturedSuccessfully object:nil];
                                                        }];
 }
 
 - (void)dealloc {
-
 	[[self captureSession] stopRunning];
-
-	[previewLayer release], previewLayer = nil;
-	[captureSession release], captureSession = nil;
-  [stillImageOutput release], stillImageOutput = nil;
-  [stillImage release], stillImage = nil;
-
-	[super dealloc];
+	previewLayer = nil;
+	captureSession = nil;
+    stillImageOutput = nil;
+    stillImage = nil;
 }
 
 @end
