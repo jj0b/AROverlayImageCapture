@@ -16,4 +16,6 @@
 - (void)captureStillImage;
 - (void)addVideoInputFrontCamera:(BOOL)front;
 - (void)switchCameraInputToFront:(BOOL)front;
+- (void)switchCameraInputToFront;
+- (void)switchCameraInputToBack;
 @end
